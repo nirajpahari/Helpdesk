@@ -1,0 +1,11 @@
+Django==2.1.2
+django-helpdesk==0.2.10
+beautifulsoup4==4.6.3
+django-bootstrap-form==3.4
+django-markdown-deux==1.0.5
+email-reply-parser==0.5.9
+lxml==4.2.5
+markdown2==2.3.6
+pytz==2018.6
+simplejson==3.16.0
+six==1.11.0
