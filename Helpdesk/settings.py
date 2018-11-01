@@ -105,6 +105,17 @@ AUTH_PASSWORD_VALIDATORS = [
 ]
 
 
+# Email settings
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_USE_TLS = True
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_HOST_USER = 'devilpunk36@gmail.com'
+EMAIL_HOST_PASSWORD = 'Black_ninja36'
+DEFAULT_FROM_EMAIL = 'devilpunk36@gmail.com'
+
+
 # Internationalization
 # https://docs.djangoproject.com/en/1.11/topics/i18n/
 
@@ -121,8 +132,23 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
+PROJECT_DIR = os.path.dirname(os.path.abspath(__file__))
+STATIC_ROOT = os.path.join(PROJECT_DIR, 'static')
+MEDIA_ROOT = os.path.join(PROJECT_DIR, 'media')
 
 STATIC_URL = '/static/'
+MEDIA_URL = '/media/'
 
+
+# HELPDESK
+LOGIN_URL = '/helpdesk/login/'
 # if multile sites are not running for helpdesk
 SITE_ID = 1
+
+HELPDESK_DEFAULT_SETTINGS = {
+        'use_email_as_submitter': True,
+        'email_on_ticket_assign': True,
+        'email_on_ticket_change': True,
+        'login_view_ticketlist': True,
+        'tickets_per_page': 25
+        }
